@@ -1,13 +1,9 @@
+// next.config.mjs
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-  basePath: '',
-  trailingSlash: true,
-}
+  trailingSlash: false, // Updated to fix Vercel build error
+  // ... other configurations
+};
 
-export default nextConfig
+module.exports = nextConfig;
