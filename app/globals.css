@@ -189,6 +189,12 @@ span {
   background-size: 48px 48px;
 }
 
+@media (max-width: 640px) {
+  .grid-pattern {
+    background-size: 32px 32px;
+  }
+}
+
 /* Dot pattern */
 .dot-pattern {
   background-image: radial-gradient(oklch(0.85 0.01 260) 1px, transparent 1px);

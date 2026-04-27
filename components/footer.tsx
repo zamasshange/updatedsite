@@ -32,7 +32,7 @@ export function Footer() {
 
   return (
     <footer className="bg-foreground pb-8 pt-14 text-background sm:pt-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-5">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-16">
         {/* Main Footer Content */}
         <div className="mb-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12 lg:mb-16">
           {/* Brand */}
@@ -149,7 +149,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-background/10 pt-8 sm:flex-row">
           <p className="text-center text-sm text-background/50 sm:text-left">
-            &copy; {new Date().getFullYear()} Zama Shange. All rights reserved.
+            &copy; 2026 BDL Inc, All rights reserved.
           </p>
 
           <motion.button

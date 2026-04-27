@@ -31,7 +31,7 @@ export function About() {
 
   return (
     <Section id="about" className="py-20 md:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-5">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-16">
         <div ref={ref} className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left - Photo */}
           <FadeIn>
@@ -67,7 +67,7 @@ export function About() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="mt-4 grid grid-cols-2 gap-3 max-[430px]:grid-cols-1">
                   <motion.div
                     animate={{ y: [0, -4, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -147,7 +147,7 @@ export function About() {
             </FadeIn>
             
             <FadeIn delay={0.1}>
-              <h2 className="mb-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+              <h2 className="mb-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-5xl">
                 The Story Behind
                 <span className="gradient-text block">the Pixels</span>
               </h2>
@@ -155,7 +155,7 @@ export function About() {
 
             <FadeIn delay={0.2}>
               <div className="mt-6 mb-8 space-y-5 leading-relaxed text-muted-foreground">
-                <p className="text-base sm:text-lg">
+                <p className="text-sm sm:text-base md:text-lg">
                   From humble beginnings to pioneering digital experiences - my journey is 
                   a testament to what&apos;s possible with relentless determination.
                 </p>
@@ -206,15 +206,15 @@ export function About() {
 
             {/* Stats Grid */}
             <FadeIn delay={0.3}>
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="mb-8 grid grid-cols-2 gap-3 max-[430px]:grid-cols-1 sm:gap-4">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="p-4 rounded-xl bg-muted/50 border border-border">
+                  <div key={stat.label} className="rounded-xl border border-border bg-muted/50 p-3 sm:p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                         <stat.icon className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <p className="text-xl font-bold text-foreground">{stat.value}</p>
+                        <p className="text-lg font-bold text-foreground sm:text-xl">{stat.value}</p>
                         <p className="text-xs text-muted-foreground">{stat.label}</p>
                       </div>
                     </div>
@@ -256,13 +256,13 @@ export function About() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
                 My Journey
               </span>
-              <h3 className="text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
+              <h3 className="text-xl font-bold text-foreground sm:text-2xl md:text-4xl">
                 From Durban to Digital Success
               </h3>
             </div>
           </FadeIn>
 
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 max-[520px]:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
             {[
               {
                 year: "2007",
@@ -290,14 +290,14 @@ export function About() {
               }
             ].map((item, index) => (
               <FadeIn key={item.year} delay={0.1 + index * 0.1}>
-                <div className="relative p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors h-full">
+                <div className="relative h-full rounded-2xl border border-border bg-card p-4 transition-colors hover:border-primary/30 sm:p-6">
                   <div className="absolute -top-3 left-6 flex items-center gap-2">
                     <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full">
                       {item.year}
                     </span>
                   </div>
                   <span className="text-xs text-primary font-medium uppercase tracking-wider">{item.phase}</span>
-                  <h4 className="text-lg font-semibold text-foreground mt-2 mb-2">
+                  <h4 className="mb-2 mt-2 text-base font-semibold text-foreground sm:text-lg">
                     {item.title}
                   </h4>
                   <p className="text-sm text-muted-foreground">

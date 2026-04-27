@@ -43,13 +43,13 @@ export function Navbar() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          hasScrolled ? "py-3" : "py-5"
+          hasScrolled ? "py-2.5 sm:py-3" : "py-3.5 sm:py-5"
         )}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-5">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-16">
           <nav
             className={cn(
-              "flex flex-nowrap items-center justify-between rounded-2xl px-5 py-3 transition-all duration-300 min-w-0",
+              "flex flex-nowrap items-center justify-between rounded-2xl px-3.5 py-2.5 transition-all duration-300 min-w-0 sm:px-5 sm:py-3",
               hasScrolled && "bg-background/95 backdrop-blur-md border border-border shadow-sm"
             )}
           >
@@ -60,7 +60,7 @@ export function Navbar() {
                 alt="ZS"
                 width={120}
                 height={48}
-                className="h-10 w-auto sm:h-12 md:h-14 lg:h-16"
+                className="h-8 w-auto sm:h-10 md:h-14 lg:h-16"
                 priority
               />
             </a>
@@ -91,7 +91,7 @@ export function Navbar() {
             {/* Hamburger for mobile */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="relative z-10 -mr-1 flex h-10 w-10 items-center justify-center lg:hidden"
+              className="relative z-10 -mr-1 flex h-9 w-9 items-center justify-center lg:hidden"
               aria-label="Toggle menu"
             >
               <div className="flex flex-col gap-1.5">

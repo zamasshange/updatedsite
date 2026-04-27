@@ -53,7 +53,7 @@ export function Services() {
         <div className="absolute -left-24 bottom-24 h-64 w-64 rounded-full bg-primary/8 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-5">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-16">
         <div ref={ref} className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
           <FadeIn>
             <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary shadow-sm backdrop-blur-sm sm:px-4 sm:text-sm">
@@ -63,7 +63,7 @@ export function Services() {
           </FadeIn>
           
           <FadeIn delay={0.1}>
-            <h2 className="mb-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+            <h2 className="mb-4 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-5xl lg:text-6xl">
               Everything You Need
               <span className="gradient-text block">to Build and Grow</span>
             </h2>
@@ -78,7 +78,7 @@ export function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 max-[430px]:grid-cols-1 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
           {servicesData.map((service, index) => {
             const Icon = iconMap[service.iconKey as keyof typeof iconMap] ?? Share2
 
@@ -88,7 +88,7 @@ export function Services() {
                   <motion.div
                     whileHover={{ y: -6 }}
                     transition={{ duration: 0.25 }}
-                    className="group relative h-full overflow-hidden rounded-2xl border border-border/70 bg-card/90 p-5 transition-all hover:border-primary/35 hover:shadow-[0_18px_45px_-22px_rgba(79,70,229,0.55)] sm:p-6"
+                    className="group relative h-full overflow-hidden rounded-2xl border border-border/70 bg-card/90 p-4 transition-all hover:border-primary/35 hover:shadow-[0_18px_45px_-22px_rgba(79,70,229,0.55)] sm:p-6"
                   >
                     <div className={`pointer-events-none absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br ${service.color} opacity-10 blur-2xl transition-opacity duration-300 group-hover:opacity-30`} />
 
@@ -100,10 +100,10 @@ export function Services() {
                       )}
                     </div>
 
-                    <h3 className="mb-2 text-lg font-semibold text-foreground">
+                    <h3 className="mb-2 text-base font-semibold text-foreground sm:text-lg">
                       {service.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
+                    <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
                       {service.shortDescription}
                     </p>
 
@@ -135,7 +135,7 @@ export function Services() {
               </div>
               <a
                 href="#contact"
-                className="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
               >
                 Start Your Project
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

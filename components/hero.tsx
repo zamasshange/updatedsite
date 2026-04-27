@@ -53,7 +53,7 @@ export function Hero() {
 
       <motion.div
         style={{ y, opacity }}
-        className="relative mx-auto w-full max-w-7xl px-4 py-12 sm:px-5 sm:py-16 md:py-24"
+        className="relative mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 md:px-10 md:py-20 lg:px-16 lg:py-24"
       >
         <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-14">
           <div>
@@ -71,7 +71,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
+              className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-6xl lg:text-7xl"
             >
               Zama Shange
             </motion.h1>
@@ -80,7 +80,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="mb-5 h-16 overflow-hidden sm:mb-6 sm:h-14"
+              className="mb-4 h-14 overflow-hidden sm:mb-6 sm:h-14"
             >
               <AnimatePresence mode="wait">
                 <motion.span
@@ -89,7 +89,7 @@ export function Hero() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -40, opacity: 0 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="gradient-text block text-xl font-semibold leading-tight sm:text-2xl md:text-3xl lg:text-4xl"
+                  className="gradient-text block text-lg font-semibold leading-tight sm:text-2xl md:text-3xl lg:text-4xl"
                 >
                   {roles[currentRoleIndex]}
                 </motion.span>
@@ -118,18 +118,18 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mb-10 flex flex-col items-stretch gap-3 sm:mb-12 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
+              className="mb-8 flex flex-col items-stretch gap-3 sm:mb-12 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
             >
               <a
                 href="#services"
-                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:justify-start"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto sm:justify-start"
               >
                 See My Portfolio
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#contact"
-                className="rounded-xl border border-border px-6 py-3.5 text-center font-medium transition-colors hover:bg-muted"
+                className="w-full rounded-xl border border-border px-6 py-3.5 text-center font-medium transition-colors hover:bg-muted sm:w-auto"
               >
                 Hire Me
               </a>
@@ -139,11 +139,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="grid grid-cols-3 gap-2.5 sm:flex sm:flex-wrap sm:items-center sm:gap-6"
+              className="grid grid-cols-2 gap-2.5 max-[430px]:grid-cols-1 sm:grid-cols-3 sm:gap-4"
             >
               {stats.map((stat, index) => (
-                <div key={stat.label} className="rounded-xl border border-border/80 bg-card/80 px-3 py-3 sm:min-w-[140px] sm:px-4">
-                  <p className="text-xl font-bold text-foreground sm:text-2xl">{stat.value}</p>
+                <div key={stat.label} className="rounded-xl border border-border/80 bg-card/80 px-3 py-3 sm:px-4">
+                  <p className="text-lg font-bold text-foreground sm:text-2xl">{stat.value}</p>
                   <p className="text-[11px] text-muted-foreground sm:text-xs">{stat.label}</p>
                 </div>
               ))}
@@ -164,16 +164,16 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25 }}
-            className="relative mt-2 lg:mt-0"
+            className="relative mt-1 lg:mt-0"
           >
             <div className="relative">
               <div className="absolute -inset-7 rounded-[2rem] bg-gradient-to-br from-primary/25 via-fuchsia-500/15 to-cyan-500/20 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[1.8rem] border border-border/80 bg-card/95 p-4 shadow-[0_30px_75px_-32px_rgba(79,70,229,0.55)] sm:p-5">
+              <div className="relative overflow-hidden rounded-[1.8rem] border border-border/80 bg-card/95 p-3.5 shadow-[0_30px_75px_-32px_rgba(79,70,229,0.55)] sm:p-5">
                 <div className="pointer-events-none absolute right-0 top-0 h-28 w-28 rounded-full bg-primary/20 blur-3xl" />
                 <div className="pointer-events-none absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-cyan-400/15 blur-2xl" />
 
                 <div className="grid gap-3 sm:grid-cols-[0.9fr_1.1fr]">
-                  <div className="relative min-h-[230px] overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-b from-primary/10 via-primary/5 to-background sm:min-h-[250px]">
+                  <div className="relative min-h-[200px] overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-b from-primary/10 via-primary/5 to-background sm:min-h-[250px]">
                     <Image
                       src="/zama-profile.jpg"
                       alt="Zama Shange"
@@ -234,7 +234,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -right-1 top-1 rounded-xl border border-border bg-card px-3 py-2 shadow-lg sm:-right-3 sm:top-2"
+              className="absolute -right-1 top-1 hidden rounded-xl border border-border bg-card px-3 py-2 shadow-lg sm:-right-3 sm:top-2 sm:block"
             >
               <div className="flex items-center gap-1.5">
                 <Star className="h-3.5 w-3.5 text-amber-500" />
@@ -245,7 +245,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -bottom-2 -left-1 rounded-xl border border-border bg-card px-3 py-2 shadow-lg sm:-left-3"
+              className="absolute -bottom-2 -left-1 hidden rounded-xl border border-border bg-card px-3 py-2 shadow-lg sm:-left-3 sm:block"
             >
               <div className="flex items-center gap-1.5">
                 <Play className="h-3.5 w-3.5 text-primary" />

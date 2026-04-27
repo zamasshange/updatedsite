@@ -51,7 +51,7 @@ export function Contact() {
 
   return (
     <Section id="contact" className="bg-muted/30 py-20 md:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-5">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-16">
         <div ref={ref} className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left - Contact Info */}
           <div>
@@ -62,7 +62,7 @@ export function Contact() {
             </FadeIn>
             
             <FadeIn delay={0.1}>
-              <h2 className="text-headline text-foreground mb-4">
+              <h2 className="mb-4 text-xl text-foreground sm:text-2xl md:text-4xl lg:text-5xl">
                 Ready to Grow?
                 <br />
                 <span className="gradient-text">Let&apos;s Talk.</span>
@@ -70,7 +70,7 @@ export function Contact() {
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <p className="text-body-lg mb-8 text-muted-foreground sm:mb-10">
+              <p className="mb-8 text-sm text-muted-foreground sm:mb-10 md:text-base lg:text-lg">
                 Get in touch to discuss your growth goals. I&apos;ll create a 
                 custom strategy tailored to your brand and audience.
               </p>
@@ -98,7 +98,7 @@ export function Contact() {
                     <p className="font-semibold text-foreground">WhatsApp</p>
                     <p className="text-sm text-muted-foreground">+27 73 670 1175</p>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  <ArrowRight className="hidden h-5 w-5 text-muted-foreground transition-colors group-hover:text-foreground sm:block" />
                 </a>
               </FadeIn>
 
@@ -114,7 +114,7 @@ export function Contact() {
                     <p className="font-semibold text-foreground">Phone</p>
                     <p className="text-sm text-muted-foreground">+27 73 670 1175</p>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  <ArrowRight className="hidden h-5 w-5 text-muted-foreground transition-colors group-hover:text-foreground sm:block" />
                 </a>
               </FadeIn>
 
@@ -130,7 +130,7 @@ export function Contact() {
                     <p className="font-semibold text-foreground">Email</p>
                     <p className="break-all text-sm text-muted-foreground">contact@zamashange.co.za</p>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  <ArrowRight className="hidden h-5 w-5 text-muted-foreground transition-colors group-hover:text-foreground sm:block" />
                 </a>
               </FadeIn>
 
