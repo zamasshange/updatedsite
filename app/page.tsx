@@ -1,20 +1,18 @@
-"use client"
-import { Navbar } from "@/components/navbar"
-import { Hero } from "@/components/hero"
-import { Services } from "@/components/services"
-import { About } from "@/components/about"
-import { Contact } from "@/components/contact"
-import { Footer } from "@/components/footer"
+'use client';
 
-export default function Home() {
+import { Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+
+function HomeContent() {
+  const searchParams = useSearchParams();
+
+  return <div>Home</div>;
+}
+
+export default function Page() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <Services />
-      <About />
-      <Contact />
-      <Footer />
-    </main>
-  )
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
+  );
 }
