@@ -2,8 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { ArrowRight, MapPin } from "lucide-react"
-import Image from "next/image"
+import { ArrowRight, MapPin, Sparkles, BriefcaseBusiness, TrendingUp, CheckCircle2 } from "lucide-react"
 
 const roles = [
   "UI/UX Designer",
@@ -181,79 +180,114 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right - Photo */}
+          {/* Right - Portfolio Proof Panel */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative order-first flex justify-center pb-2 lg:order-none lg:pb-0"
+            className="relative order-first pb-2 lg:order-none lg:pb-0"
           >
-            {/* Photo Container */}
             <div className="relative">
-              {/* Background decorative elements */}
-              <div className="absolute -inset-4 bg-primary/10 rounded-3xl transform rotate-3" />
-              <div className="absolute -inset-4 bg-primary/5 rounded-3xl transform -rotate-3" />
-              
-              {/* Main Photo */}
-              <div className="relative h-[17.5rem] w-[13rem] overflow-hidden rounded-3xl border-4 border-primary/20 bg-muted/40 shadow-2xl sm:h-[21rem] sm:w-[15.5rem]">
-                <Image
-                  src="/zama-profile.jpg"
-                  alt="Zama Shange"
-                  fill
-                  className="scale-[1.08] transform-gpu object-cover object-[center_12%]"
-                  sizes="(max-width: 640px) 232px, (max-width: 1024px) 272px, 320px"
-                  loading="eager"
-                  priority
-                />
-                {/* Gradient overlay at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent" />
-                
-                {/* Name badge at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-white text-xl font-bold">Zama Shange</h3>
-                  <p className="text-white/80 text-sm">Digital Creator</p>
+              <div className="absolute -inset-5 rounded-3xl bg-primary/10 blur-2xl" />
+              <div className="relative rounded-3xl border border-border/80 bg-card/95 p-5 shadow-[0_24px_70px_-35px_rgba(79,70,229,0.45)] sm:p-7">
+                <div className="mb-5 flex items-center justify-between gap-3">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    Portfolio Snapshot
+                  </div>
+                  <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-600">
+                    Available
+                  </span>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {[
+                    { label: "Client Satisfaction", value: "98%" },
+                    { label: "Projects Delivered", value: "150+" },
+                    { label: "Social Reach Built", value: "45K+" },
+                    { label: "Avg. Response Time", value: "<24h" },
+                  ].map((item) => (
+                    <div key={item.label} className="rounded-2xl border border-border/70 bg-muted/40 p-3.5">
+                      <p className="text-lg font-semibold text-foreground">{item.value}</p>
+                      <p className="text-xs text-muted-foreground">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-border/80 bg-background/70 p-4">
+                  <div className="mb-3 flex items-center gap-2">
+                    <BriefcaseBusiness className="h-4 w-4 text-primary" />
+                    <p className="text-sm font-semibold text-foreground">What clients hire me for</p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Conversion-focused websites",
+                      "Brand-first UI/UX design",
+                      "Growth content strategy",
+                      "Mobile app experiences",
+                    ].map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-border bg-card px-3 py-1.5 text-xs text-muted-foreground"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-primary/20 bg-primary/[0.06] p-4">
+                  <div className="mb-3 flex items-center gap-2">
+                    <TrendingUp className="h-4 w-4 text-primary" />
+                    <p className="text-sm font-semibold text-foreground">How we work together</p>
+                  </div>
+                  <ul className="space-y-2.5">
+                    {[
+                      "Discovery call to define your growth goals",
+                      "Custom strategy and delivery roadmap",
+                      "Execution with weekly progress updates",
+                    ].map((step) => (
+                      <li key={step} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        <span>{step}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-
-              {/* Floating badges */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-2 -top-3 rounded-xl border border-border bg-card p-3 shadow-lg sm:-right-6 lg:-right-8"
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
-                    <Image
-                      src="/Instagram_icon.png"
-                      alt="Instagram"
-                      width={18}
-                      height={18}
-                      className="h-[18px] w-[18px] object-contain"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-foreground">30K+</p>
-                    <p className="text-[10px] text-muted-foreground">Instagram</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -bottom-3 -left-2 rounded-xl border border-border bg-card p-3 shadow-lg sm:-left-6 lg:-left-8"
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary text-xs font-bold">ZS</span>
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-foreground">45K+</p>
-                    <p className="text-[10px] text-muted-foreground">All Platforms</p>
-                  </div>
-                </div>
-              </motion.div>
             </div>
+
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -right-2 -top-3 rounded-xl border border-border bg-card p-3 shadow-lg sm:-right-5"
+            >
+              <div className="flex items-center gap-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
+                  <ArrowRight className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-foreground">High-impact delivery</p>
+                  <p className="text-[10px] text-muted-foreground">From idea to execution</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute -bottom-3 -left-2 rounded-xl border border-border bg-card p-3 shadow-lg sm:-left-5"
+            >
+              <div className="flex items-center gap-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/10">
+                  <CheckCircle2 className="h-4 w-4 text-green-600" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-foreground">Trusted by creators</p>
+                  <p className="text-[10px] text-muted-foreground">Results that scale</p>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 
