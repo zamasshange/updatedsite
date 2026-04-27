@@ -1,20 +1,22 @@
-
 import { Suspense } from 'react';
+import { About } from '@/components/about';
+import { Contact } from '@/components/contact';
+import { Footer } from '@/components/footer';
+import { Hero } from '@/components/hero';
+import { Navbar } from '@/components/navbar';
+import { Services } from '@/components/services';
 
-function HomeContentWrapper() {
+export default function HomePage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <HomeContent />
-    </Suspense>
+    <main className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <Hero />
+      <Services />
+      <About />
+      <Suspense fallback={<div className="py-20 text-center text-sm text-muted-foreground">Loading contact section...</div>}>
+        <Contact />
+      </Suspense>
+      <Footer />
+    </main>
   );
 }
-
-// HomeContent must be a client component
-"use client";
-import { useSearchParams } from 'next/navigation';
-function HomeContent() {
-  const searchParams = useSearchParams();
-  return <div>Home</div>;
-}
-
-export default HomeContentWrapper;
