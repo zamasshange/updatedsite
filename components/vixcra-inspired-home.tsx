@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowUpRight, Check, ChevronDown, Star } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { servicesData } from "@/lib/services-data"
+import { ThemeToggle } from "./theme-toggle"
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -327,32 +328,35 @@ export function VixcraInspiredHome() {
   }, [activeCategory])
 
   return (
-    <main className="min-h-screen bg-[#080806] text-[#f4f0e6]">
+    <main className="min-h-screen bg-background text-foreground">
       <header className="fixed left-0 right-0 top-0 z-50 px-4 py-4">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-[#080806]/82 px-4 py-3 backdrop-blur-xl sm:px-6">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border bg-background/80 px-4 py-3 backdrop-blur-xl sm:px-6">
           <a href="#home" className="flex items-center gap-3">
-            <Image src="/logo.png" alt="Zama Shange" width={96} height={40} className="h-9 w-auto brightness-0 invert" priority />
+            <Image src="/logo.png" alt="Zama Shange" width={96} height={40} className="h-9 w-auto dark:brightness-0 dark:invert" priority />
           </a>
           <div className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => (
-              <a key={item.label} href={item.href} className="rounded-full px-4 py-2 text-sm text-white/68 transition-colors hover:bg-white/10 hover:text-white">
+              <a key={item.label} href={item.href} className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
                 {item.label}
               </a>
             ))}
           </div>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[#d9ff5f] px-4 py-2 text-sm font-semibold text-[#10100d] transition-transform hover:-translate-y-0.5 sm:px-5">
-            Let&apos;s Talk
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 sm:px-5">
+              Let&apos;s Talk
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
         </nav>
       </header>
 
-      <section id="home" className="relative overflow-hidden px-4 pb-16 pt-28 sm:pt-32 lg:min-h-screen">
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(217,255,95,.12),transparent_30%),linear-gradient(300deg,rgba(244,240,230,.08),transparent_34%)]" />
+      <section id="home" className="relative overflow-hidden px-4 pb-16 pt-28 sm:pt-32 lg:min-h-screen bg-background text-foreground">
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(217,255,95,.12),transparent_30%),linear-gradient(300deg,rgba(217,255,95,.08),transparent_34%)] dark:bg-[linear-gradient(120deg,rgba(217,255,95,.12),transparent_30%),linear-gradient(300deg,rgba(244,240,230,.08),transparent_34%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-end">
           <div>
             <FadeIn>
-              <p className="mb-6 text-sm uppercase tracking-[0.34em] text-[#d9ff5f]">Welcome to Zama Shange</p>
+              <p className="mb-6 text-sm uppercase tracking-[0.34em] text-primary">Welcome to Zama Shange</p>
             </FadeIn>
             <FadeIn delay={0.08}>
               <h1 className="max-w-4xl text-5xl font-semibold uppercase leading-[0.9] tracking-normal sm:text-7xl lg:text-8xl xl:text-9xl">
