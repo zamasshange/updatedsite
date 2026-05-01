@@ -2,19 +2,14 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { ArrowRight, MapPin, Sparkles, CheckCircle2 } from "lucide-react"
+import { ArrowRight, MapPin, CheckCircle2 } from "lucide-react"
 import Image from "next/image"
 
 const roles = [
   "UI/UX Designer",
-  "Web Developer",
-  "App Developer",
-  "Social Media Manager",
-  "Promo Video Creator",
-  "Flutter Developer",
-  "Instagram Strategist",
-  "TikTok Marketing Specialist",
-  "Digital Marketing Expert",
+  "Web & App Developer",
+  "Social Media Manager & Strategist",
+  "Video Editor & Videographer",
 ]
 
 const stats = [
@@ -63,7 +58,7 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary sm:mb-6 sm:px-4 sm:py-2 sm:text-sm"
             >
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="h-2 w-2 rounded-full bg-green-500" />
               Available for projects
             </motion.div>
 
@@ -111,7 +106,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.25 }}
               className="text-body-lg mb-7 max-w-xl text-muted-foreground sm:mb-8"
             >
-              I create beautiful, high-performing websites and digital experiences that help you connect with your audience and achieve your business goals.
+              I design interfaces, build responsive websites and apps, grow social channels, and create video content that helps brands look credible and move with purpose.
             </motion.p>
 
             <motion.div
@@ -121,17 +116,17 @@ export function Hero() {
               className="mb-8 flex flex-col items-stretch gap-3 sm:mb-12 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
             >
               <a
-                href="#services"
+                href="#work"
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto sm:justify-start"
               >
-                See My Portfolio
+                View My Work
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#contact"
                 className="w-full rounded-xl border border-border px-6 py-3.5 text-center font-medium transition-colors hover:bg-muted sm:w-auto"
               >
-                Hire Me
+                Contact Me
               </a>
             </motion.div>
 
@@ -190,9 +185,8 @@ export function Hero() {
                   </div>
 
                   <div className="rounded-2xl border border-border/70 bg-background/80 p-3.5">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-[11px] font-medium text-primary">
-                      <Sparkles className="h-3 w-3" />
-                      Portfolio Highlight
+                    <div className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-[11px] font-medium text-primary">
+                      Portfolio Focus
                     </div>
                     <h3 className="mt-3 text-lg font-semibold leading-tight text-foreground">
                       Delivering results-driven design and development solutions.

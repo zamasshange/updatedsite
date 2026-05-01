@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 
 const navItems = [
+  { label: "Work", href: "#work" },
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -84,7 +85,7 @@ export function Navbar() {
                 href="#contact"
                 className="px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium rounded-xl hover:bg-primary/90 transition-colors whitespace-nowrap"
               >
-                Get Started
+                Contact Me
               </a>
             </div>
 
@@ -145,7 +146,7 @@ export function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="px-8 py-4 bg-primary text-primary-foreground rounded-xl text-lg font-medium"
                 >
-                  Get Started
+                  Contact Me
                 </a>
               </motion.div>
             </div>
