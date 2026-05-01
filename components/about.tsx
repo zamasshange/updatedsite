@@ -114,7 +114,7 @@ export function About() {
                   </div>
 
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Building standout digital experiences for brands and creators who want world-class results, not average output.
+                    Building effective digital experiences for brands and creators who want real results and measurable impact.
                   </p>
 
                   <ul className="mt-4 space-y-2.5">

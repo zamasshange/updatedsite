@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { ArrowRight, MapPin, Sparkles, CheckCircle2, Star, Play } from "lucide-react"
+import { ArrowRight, MapPin, Sparkles, CheckCircle2 } from "lucide-react"
 import Image from "next/image"
 
 const roles = [
@@ -111,7 +111,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.25 }}
               className="text-body-lg mb-7 max-w-xl text-muted-foreground sm:mb-8"
             >
-              I build premium websites, product experiences, and growth systems that make brands look world-class and convert attention into clients.
+              I create beautiful, high-performing websites and digital experiences that help you connect with your audience and achieve your business goals.
             </motion.p>
 
             <motion.div
@@ -195,7 +195,7 @@ export function Hero() {
                       Portfolio Highlight
                     </div>
                     <h3 className="mt-3 text-lg font-semibold leading-tight text-foreground">
-                      Crafting brands that look expensive and convert.
+                      Delivering results-driven design and development solutions.
                     </h3>
                     <p className="mt-2 text-sm text-muted-foreground">
                       Design, development, and growth strategy in one workflow.
@@ -231,27 +231,7 @@ export function Hero() {
               </div>
             </div>
 
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -right-1 top-1 hidden rounded-xl border border-border bg-card px-3 py-2 shadow-lg sm:-right-3 sm:top-2 sm:block"
-            >
-              <div className="flex items-center gap-1.5">
-                <Star className="h-3.5 w-3.5 text-amber-500" />
-                <p className="text-[11px] font-semibold text-foreground">Premium portfolio vibe</p>
-              </div>
-            </motion.div>
 
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -bottom-2 -left-1 hidden rounded-xl border border-border bg-card px-3 py-2 shadow-lg sm:-left-3 sm:block"
-            >
-              <div className="flex items-center gap-1.5">
-                <Play className="h-3.5 w-3.5 text-primary" />
-                <p className="text-[11px] font-semibold text-foreground">Ready to build your vision</p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
 
