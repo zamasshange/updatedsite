@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowUpRight, Check, ChevronDown, Star } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { servicesData } from "@/lib/services-data"
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -18,9 +19,12 @@ const brandStrip = [
   "UI/UX Design",
   "Web Development",
   "App Development",
-  "Social Strategy",
-  "Video Editing",
-  "Videography",
+  "Social Media Management",
+  "Promo Videos",
+  "Instagram Growth",
+  "TikTok Marketing",
+  "YouTube Growth",
+  "Analytics & Insights",
   "Flutter",
   "Next.js",
 ]
@@ -40,54 +44,56 @@ const stats = [
   },
   {
     value: "150+",
-    label: "Projects and clients",
+    label: "Happy Clients",
     title: "Practical execution",
     body: "Design, development, content, and growth work delivered with a clear focus on outcomes.",
   },
   {
-    value: "24h",
-    label: "Typical Reply Time",
-    title: "Fast project clarity",
-    body: "Quick responses, direct planning, and a smoother start for serious clients and collaborators.",
+    value: "2007",
+    label: "Born in Durban",
+    title: "Self-taught from early",
+    body: "A journey shaped by curiosity, resilience, technology, design, and a hunger to build meaningful work.",
   },
 ]
 
-const services = [
+const expertise = ["Full-Stack Development", "UI/UX Design", "Video Production"]
+
+const impactPoints = [
+  "Clients across Africa, Europe, and beyond",
+  "Growth-first strategy with measurable outcomes",
+  "Creative direction aligned to brand positioning",
+]
+
+const journey = [
   {
-    title: "Web Development",
-    body: "Modern responsive websites built with clean structure, strong performance, and conversion-focused sections.",
-    tags: ["Next.js", "SEO", "Responsive"],
+    year: "2007",
+    phase: "Early Days",
+    title: "The Spark",
+    description: "Discovered a passion for technology and design in humble beginnings, teaching myself to code and create.",
   },
   {
-    title: "UI/UX Design",
-    body: "User flows, wireframes, polished screens, and design systems that make digital products feel clear and premium.",
-    tags: ["Figma", "Prototypes", "Design Systems"],
+    year: "2016",
+    phase: "Growth",
+    title: "Building Foundation",
+    description: "Spent countless hours mastering full-stack development, UI/UX principles, and video production techniques.",
   },
   {
-    title: "App Development",
-    body: "Cross-platform app planning and Flutter development for founders, businesses, and service platforms.",
-    tags: ["Flutter", "Mobile UI", "Product Flow"],
+    year: "2020",
+    phase: "Breakthrough",
+    title: "Finding My Voice",
+    description: "Combined technical skills with creative vision to develop a unique approach to digital experiences.",
   },
   {
-    title: "Social Media Strategy",
-    body: "Content pillars, growth systems, campaign planning, and community management for brands that want momentum.",
-    tags: ["Instagram", "TikTok", "Analytics"],
-  },
-  {
-    title: "Video Editing",
-    body: "Short-form promo edits, launch videos, reels, captions, and scroll-ready creative for social campaigns.",
-    tags: ["Reels", "Shorts", "Promo"],
-  },
-  {
-    title: "Videography",
-    body: "Shoot planning, visual direction, and social-first video capture for personal brands and business stories.",
-    tags: ["Reels", "Events", "Brand Story"],
+    year: "Now",
+    phase: "Present",
+    title: "Making Impact",
+    description: "Working with clients worldwide, building a community of 45K+ followers, and pushing creative boundaries daily.",
   },
 ]
 
-type ProjectCategory = "All" | "UI/UX" | "Web Dev" | "App Dev" | "Social" | "Video"
+type ProjectCategory = "All" | "UI/UX" | "Web Dev" | "App Dev" | "Social" | "Video" | "Videography"
 
-const projectCategories: ProjectCategory[] = ["All", "UI/UX", "Web Dev", "App Dev", "Social", "Video"]
+const projectCategories: ProjectCategory[] = ["All", "UI/UX", "Web Dev", "App Dev", "Social", "Video", "Videography"]
 
 const projects = [
   {
@@ -132,7 +138,7 @@ const projects = [
   },
   {
     title: "Brand Story Reels",
-    category: "Video",
+    category: "Videography",
     price: "Shoot",
     date: "2026",
     body: "Videography and visual direction for brands that need personality, context, and social-ready clips.",
@@ -179,6 +185,13 @@ const faqs = [
     q: "Do you offer monthly support?",
     a: "Yes. Monthly support works well for social media management, content editing, website updates, and growth strategy.",
   },
+]
+
+const creativeStack = [
+  "UI/UX Designer",
+  "Web & App Developer",
+  "Social Media Manager & Strategist",
+  "Video Editor & Videographer",
 ]
 
 function FadeIn({
@@ -229,6 +242,77 @@ function WorkPreview({ color, label }: { color: string; label: string }) {
   )
 }
 
+function CreativeCommandCenter() {
+  return (
+    <div className="relative min-h-[560px] overflow-hidden rounded-[2.4rem] border border-white/10 bg-[#151510] p-4 shadow-[0_40px_120px_-70px_rgba(216,255,99,.8)] sm:p-5">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(247,243,232,.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(247,243,232,.08)_1px,transparent_1px)] bg-[size:42px_42px]" />
+      <motion.div
+        animate={{ y: [0, -12, 0], rotate: [0, -1.5, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="relative rounded-[1.8rem] border border-white/12 bg-[#f7f3e8] p-4 text-[#10100d] shadow-2xl"
+      >
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.28em] text-black/45">Creative OS</p>
+            <h3 className="mt-2 text-2xl font-semibold tracking-normal">Zama Studio Board</h3>
+          </div>
+          <div className="rounded-full bg-[#d8ff63] px-3 py-1.5 text-xs font-semibold">Live</div>
+        </div>
+        <div className="mt-5 grid gap-3 sm:grid-cols-[1fr_.8fr]">
+          <div className="rounded-[1.2rem] bg-[#10100d] p-4 text-[#f7f3e8]">
+            <div className="mb-8 flex items-center justify-between">
+              <span className="h-2.5 w-20 rounded-full bg-[#d8ff63]" />
+              <span className="text-xs text-white/45">Portfolio</span>
+            </div>
+            <div className="space-y-2">
+              <div className="h-16 rounded-2xl bg-white/12" />
+              <div className="h-2 rounded-full bg-white/20" />
+              <div className="h-2 w-3/5 rounded-full bg-white/16" />
+            </div>
+          </div>
+          <div className="grid gap-3">
+            <div className="rounded-[1.2rem] bg-[#d8ff63] p-4">
+              <p className="text-3xl font-semibold tracking-normal">45K+</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-black/52">Audience</p>
+            </div>
+            <div className="rounded-[1.2rem] bg-[#ff7a3d] p-4 text-white">
+              <p className="text-3xl font-semibold tracking-normal">150+</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/65">Clients</p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        animate={{ x: [0, 14, 0], y: [0, 10, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-5 left-5 right-5 rounded-[1.6rem] border border-white/10 bg-[#0b0b09]/88 p-4 backdrop-blur"
+      >
+        <p className="text-xs uppercase tracking-[0.28em] text-[#d8ff63]">Multidisciplinary stack</p>
+        <div className="mt-4 grid gap-2 sm:grid-cols-2">
+          {creativeStack.map((item) => (
+            <div key={item} className="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-sm text-white/72">
+              {item}
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.div
+        animate={{ y: [0, -18, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+        className="absolute right-5 top-44 hidden w-44 rounded-[1.4rem] border border-white/10 bg-[#6ee7ff] p-4 text-[#10100d] shadow-xl sm:block"
+      >
+        <p className="text-xs uppercase tracking-[0.2em] text-black/55">Campaign</p>
+        <div className="mt-5 h-2 rounded-full bg-black/15" />
+        <div className="mt-2 h-2 w-2/3 rounded-full bg-black/15" />
+        <p className="mt-5 text-2xl font-semibold">+210%</p>
+        <p className="text-xs text-black/55">Engagement</p>
+      </motion.div>
+    </div>
+  )
+}
+
 export function VixcraInspiredHome() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>("All")
   const [openFaq, setOpenFaq] = useState(0)
@@ -260,35 +344,33 @@ export function VixcraInspiredHome() {
       </header>
 
       <section id="home" className="relative overflow-hidden px-4 pb-16 pt-28 sm:pt-32 lg:min-h-screen">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_22%,rgba(216,255,99,.24),transparent_26%),radial-gradient(circle_at_12%_20%,rgba(255,122,61,.18),transparent_24%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(216,255,99,.13),transparent_30%),linear-gradient(300deg,rgba(255,122,61,.12),transparent_34%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-end">
           <div>
             <FadeIn>
               <p className="mb-6 text-sm uppercase tracking-[0.34em] text-[#d8ff63]">Welcome to Zama Shange</p>
             </FadeIn>
             <FadeIn delay={0.08}>
-              <h1 className="max-w-4xl text-[clamp(3.4rem,12vw,10rem)] font-semibold uppercase leading-[0.86] tracking-[-0.04em]">
+              <h1 className="max-w-4xl text-5xl font-semibold uppercase leading-[0.9] tracking-normal sm:text-7xl lg:text-8xl xl:text-9xl">
                 Creative digital
                 <span className="block text-[#d8ff63]">solution</span>
                 <span className="block">studio</span>
               </h1>
             </FadeIn>
+            <FadeIn delay={0.14}>
+              <p className="mt-8 max-w-2xl text-lg leading-8 text-white/62">
+                UI/UX design, full-stack web development, Flutter app development, social media strategy,
+                organic growth, video editing, and videography brought together in one sharp creative system.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="#projects" className="rounded-full bg-[#d8ff63] px-6 py-3 text-sm font-semibold text-[#10100d]">View My Work</a>
+                <a href="#contact" className="rounded-full border border-white/14 px-6 py-3 text-sm font-semibold text-white">Contact Me</a>
+              </div>
+            </FadeIn>
           </div>
 
           <FadeIn delay={0.18} className="space-y-5">
-            <div className="relative overflow-hidden rounded-[2.4rem] border border-white/10 bg-white/7 p-3">
-              <div className="relative aspect-[4/4.55] overflow-hidden rounded-[1.8rem] bg-[#1b1b16]">
-                <Image src="/zama-profile.jpg" alt="Zama Shange" fill priority sizes="(max-width: 1024px) 100vw, 560px" className="object-cover object-top grayscale-[18%]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/8 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5 flex flex-wrap items-end justify-between gap-4">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.28em] text-white/55">Creative Developer</p>
-                    <p className="mt-1 text-2xl font-semibold">Zama Shange</p>
-                  </div>
-                  <div className="rounded-full bg-[#d8ff63] px-4 py-2 text-sm font-semibold text-[#10100d]">Available</div>
-                </div>
-              </div>
-            </div>
+            <CreativeCommandCenter />
             <div className="grid gap-4 sm:grid-cols-[.72fr_1fr]">
               <div className="rounded-[1.6rem] border border-white/10 bg-white/8 p-5">
                 <div className="mb-3 flex gap-1 text-[#d8ff63]">
@@ -317,7 +399,7 @@ export function VixcraInspiredHome() {
         <div className="flex overflow-hidden">
           <div className="flex min-w-max animate-marquee items-center gap-10 pr-10">
             {[...brandStrip, ...brandStrip, ...brandStrip].map((item, index) => (
-              <span key={`${item}-${index}`} className="text-lg font-semibold uppercase tracking-[-0.02em] sm:text-2xl">
+              <span key={`${item}-${index}`} className="text-lg font-semibold uppercase tracking-normal sm:text-2xl">
                 {item}
               </span>
             ))}
@@ -332,9 +414,33 @@ export function VixcraInspiredHome() {
               <p className="text-sm uppercase tracking-[0.34em] text-[#d8ff63]">_About Me</p>
             </FadeIn>
             <FadeIn delay={0.08}>
-              <h2 className="text-[clamp(2rem,5.4vw,5.4rem)] font-semibold leading-[0.96] tracking-[-0.04em]">
+              <h2 className="text-3xl font-semibold leading-tight tracking-normal sm:text-5xl lg:text-7xl">
                 I craft digital experiences that connect design, technology, content, and growth into one clear brand system.
               </h2>
+              <div className="mt-7 space-y-5 text-base leading-8 text-white/62">
+                <p>
+                  Born on <strong className="text-white">June 20, 2007</strong>, in Durban, I moved to Johannesburg at 9 and used curiosity,
+                  an old computer, and online learning to build my foundation in code, design, content, and digital growth.
+                </p>
+                <p>
+                  Today I help brands, creators, and businesses build stronger digital presence through websites,
+                  Flutter apps, UI/UX systems, social media management, organic growth, paid advertising, analytics, and promo content.
+                </p>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {expertise.map((item) => (
+                  <span key={item} className="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-sm text-white/70">
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                {impactPoints.map((point) => (
+                  <div key={point} className="rounded-[1.2rem] border border-white/10 bg-white/[0.05] p-4 text-sm leading-6 text-white/62">
+                    {point}
+                  </div>
+                ))}
+              </div>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="#contact" className="rounded-full bg-[#d8ff63] px-6 py-3 text-sm font-semibold text-[#10100d]">Contact Me</a>
                 <a href="#services" className="rounded-full border border-white/14 px-6 py-3 text-sm font-semibold text-white">Explore Services</a>
@@ -346,10 +452,23 @@ export function VixcraInspiredHome() {
             {stats.map((stat, index) => (
               <FadeIn key={stat.label} delay={index * 0.06}>
                 <div className="h-full rounded-[1.8rem] border border-white/10 bg-white/[0.06] p-6">
-                  <p className="text-5xl font-semibold tracking-[-0.05em] text-[#d8ff63]">{stat.value}</p>
+                  <p className="text-5xl font-semibold tracking-normal text-[#d8ff63]">{stat.value}</p>
                   <p className="mt-2 text-sm uppercase tracking-[0.22em] text-white/44">{stat.label}</p>
                   <h3 className="mt-8 text-xl font-semibold">{stat.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/58">{stat.body}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {journey.map((item, index) => (
+              <FadeIn key={item.year} delay={index * 0.05}>
+                <div className="h-full rounded-[1.6rem] border border-white/10 bg-[#f7f3e8] p-5 text-[#10100d]">
+                  <p className="text-sm uppercase tracking-[0.24em] text-black/45">{item.phase}</p>
+                  <p className="mt-5 text-4xl font-semibold tracking-normal">{item.year}</p>
+                  <h3 className="mt-4 text-xl font-semibold">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-black/62">{item.description}</p>
                 </div>
               </FadeIn>
             ))}
@@ -364,35 +483,63 @@ export function VixcraInspiredHome() {
               <p className="text-sm uppercase tracking-[0.34em] text-black/50">_Services</p>
             </FadeIn>
             <FadeIn delay={0.08}>
-              <h2 className="text-[clamp(2.4rem,6.8vw,6.8rem)] font-semibold uppercase leading-[0.88] tracking-[-0.055em]">
+              <h2 className="text-4xl font-semibold uppercase leading-[0.95] tracking-normal sm:text-6xl lg:text-8xl">
                 Creative solutions for every digital need
               </h2>
             </FadeIn>
           </div>
 
           <div className="space-y-5">
-            {services.map((service, index) => (
+            {servicesData.map((service, index) => (
               <FadeIn key={service.title} delay={index * 0.04}>
                 <div className="group grid gap-5 rounded-[2rem] border border-black/10 bg-white p-4 transition-colors hover:bg-[#10100d] hover:text-[#f7f3e8] lg:grid-cols-[.8fr_1fr_.5fr] lg:items-center lg:p-6">
                   <div className="overflow-hidden rounded-[1.4rem] bg-[#efeadf]">
                     <WorkPreview color={index % 2 === 0 ? "from-[#d8ff63] to-[#ff7a3d]" : "from-[#10100d] to-[#6ee7ff]"} label={service.title} />
                   </div>
                   <div>
-                    <p className="text-sm uppercase tracking-[0.24em] text-black/40 transition-colors group-hover:text-white/40">0{index + 1}</p>
-                    <h3 className="mt-3 text-3xl font-semibold tracking-[-0.035em] sm:text-5xl">{service.title}</h3>
-                    <p className="mt-4 max-w-2xl text-base leading-7 text-black/62 transition-colors group-hover:text-white/62">{service.body}</p>
+                    <p className="text-sm uppercase tracking-[0.24em] text-black/40 transition-colors group-hover:text-white/40">
+                      {String(index + 1).padStart(2, "0")} / {service.deliveryTime}
+                    </p>
+                    <h3 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">{service.title}</h3>
+                    <p className="mt-4 max-w-2xl text-base leading-7 text-black/62 transition-colors group-hover:text-white/62">{service.shortDescription}</p>
                     <div className="mt-5 flex flex-wrap gap-2">
-                      {service.tags.map((tag) => (
+                      {[...service.idealFor.slice(0, 2), ...service.deliverables.slice(0, 2)].map((tag) => (
                         <span key={tag} className="rounded-full border border-black/10 px-3 py-1 text-xs text-black/58 transition-colors group-hover:border-white/15 group-hover:text-white/58">
                           {tag}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <a href="#contact" className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#d8ff63] text-[#10100d] transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
+                  <a href={`/services/${service.slug}`} className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#d8ff63] text-[#10100d] transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" aria-label={`View ${service.title}`}>
                     <ArrowUpRight className="h-6 w-6" />
                   </a>
                 </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl">
+          <FadeIn className="mb-12 max-w-4xl">
+            <p className="text-sm uppercase tracking-[0.34em] text-[#d8ff63]">_Complete service menu</p>
+            <h2 className="mt-5 text-4xl font-semibold uppercase leading-[0.95] tracking-normal sm:text-6xl lg:text-7xl">
+              Every offer from the original site, kept visible
+            </h2>
+          </FadeIn>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {servicesData.map((service, index) => (
+              <FadeIn key={service.slug} delay={(index % 6) * 0.03}>
+                <a href={`/services/${service.slug}`} className="group block h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-5 transition-colors hover:border-[#d8ff63]/45 hover:bg-white/[0.1]">
+                  <div className="flex items-start justify-between gap-4">
+                    <p className="text-sm uppercase tracking-[0.24em] text-[#d8ff63]">{String(index + 1).padStart(2, "0")}</p>
+                    <ArrowUpRight className="h-5 w-5 text-white/35 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#d8ff63]" />
+                  </div>
+                  <h3 className="mt-5 text-2xl font-semibold tracking-normal">{service.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/58">{service.shortDescription}</p>
+                  <p className="mt-5 text-xs uppercase tracking-[0.2em] text-white/35">{service.deliveryTime}</p>
+                </a>
               </FadeIn>
             ))}
           </div>
@@ -406,7 +553,7 @@ export function VixcraInspiredHome() {
               <p className="text-sm uppercase tracking-[0.34em] text-[#d8ff63]">_Projects</p>
             </FadeIn>
             <FadeIn delay={0.08}>
-              <h2 className="text-[clamp(2.3rem,6vw,6rem)] font-semibold uppercase leading-[0.9] tracking-[-0.055em]">
+              <h2 className="text-4xl font-semibold uppercase leading-[0.95] tracking-normal sm:text-6xl lg:text-8xl">
                 Selected work that delivers results
               </h2>
             </FadeIn>
@@ -438,7 +585,7 @@ export function VixcraInspiredHome() {
                   <div className="grid gap-4 p-2 pt-5 sm:grid-cols-[1fr_auto] sm:items-start">
                     <div>
                       <p className="text-sm text-[#d8ff63]">{project.category}</p>
-                      <h3 className="mt-2 text-2xl font-semibold tracking-[-0.035em] sm:text-3xl">{project.title}</h3>
+                      <h3 className="mt-2 text-2xl font-semibold tracking-normal sm:text-3xl">{project.title}</h3>
                       <p className="mt-3 max-w-xl text-sm leading-6 text-white/58">{project.body}</p>
                     </div>
                     <div className="flex gap-2 sm:flex-col sm:items-end">
@@ -458,7 +605,7 @@ export function VixcraInspiredHome() {
           <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
             <FadeIn>
               <p className="text-sm uppercase tracking-[0.34em] text-black/50">_Client satisfaction</p>
-              <h2 className="mt-5 text-[clamp(2.3rem,5.6vw,5.8rem)] font-semibold uppercase leading-[0.9] tracking-[-0.055em]">
+              <h2 className="mt-5 text-4xl font-semibold uppercase leading-[0.95] tracking-normal sm:text-6xl lg:text-7xl">
                 What people can expect from working with me
               </h2>
             </FadeIn>
@@ -470,7 +617,7 @@ export function VixcraInspiredHome() {
               ].map((quote, index) => (
                 <FadeIn key={quote} delay={index * 0.06}>
                   <div className="rounded-[2rem] border border-black/10 bg-white p-6">
-                    <p className="text-xl leading-8 tracking-[-0.02em]">{quote}</p>
+                    <p className="text-xl leading-8 tracking-normal">{quote}</p>
                     <p className="mt-6 text-sm uppercase tracking-[0.22em] text-black/40">Zama Shange Studio</p>
                   </div>
                 </FadeIn>
@@ -484,7 +631,7 @@ export function VixcraInspiredHome() {
         <div className="mx-auto max-w-7xl">
           <FadeIn className="mx-auto mb-12 max-w-3xl text-center">
             <p className="text-sm uppercase tracking-[0.34em] text-[#d8ff63]">_Pricing</p>
-            <h2 className="mt-5 text-[clamp(2.3rem,5.6vw,5.8rem)] font-semibold uppercase leading-[0.9] tracking-[-0.055em]">
+            <h2 className="mt-5 text-4xl font-semibold uppercase leading-[0.95] tracking-normal sm:text-6xl lg:text-7xl">
               Flexible plans for serious growth
             </h2>
           </FadeIn>
@@ -493,7 +640,7 @@ export function VixcraInspiredHome() {
               <FadeIn key={plan.name} delay={index * 0.06}>
                 <div className={cn("h-full rounded-[2rem] border p-6", plan.featured ? "border-[#d8ff63] bg-[#d8ff63] text-[#10100d]" : "border-white/10 bg-white/[0.06]")}>
                   <p className="text-xl font-semibold">{plan.name}</p>
-                  <p className="mt-5 text-5xl font-semibold tracking-[-0.05em]">{plan.price}</p>
+                  <p className="mt-5 text-5xl font-semibold tracking-normal">{plan.price}</p>
                   <p className={cn("mt-4 text-sm leading-6", plan.featured ? "text-black/62" : "text-white/58")}>{plan.body}</p>
                   <a href="#contact" className={cn("mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold", plan.featured ? "bg-[#10100d] text-[#f7f3e8]" : "bg-[#f7f3e8] text-[#10100d]")}>
                     Get Started
@@ -519,7 +666,7 @@ export function VixcraInspiredHome() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.85fr_1.15fr]">
           <FadeIn>
             <p className="text-sm uppercase tracking-[0.34em] text-black/50">_FAQ</p>
-            <h2 className="mt-5 text-[clamp(2.3rem,5.6vw,5.8rem)] font-semibold uppercase leading-[0.9] tracking-[-0.055em]">
+            <h2 className="mt-5 text-4xl font-semibold uppercase leading-[0.95] tracking-normal sm:text-6xl lg:text-7xl">
               Frequently asked questions
             </h2>
           </FadeIn>
@@ -547,13 +694,15 @@ export function VixcraInspiredHome() {
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.9fr_1.1fr]">
           <FadeIn>
             <p className="text-sm uppercase tracking-[0.34em] text-[#d8ff63]">_Contact</p>
-            <h2 className="mt-5 text-[clamp(2.6rem,7vw,7rem)] font-semibold uppercase leading-[0.86] tracking-[-0.055em]">
+            <h2 className="mt-5 text-5xl font-semibold uppercase leading-[0.9] tracking-normal sm:text-7xl lg:text-8xl">
               Let&apos;s build your next digital move
             </h2>
             <div className="mt-8 space-y-4 text-white/62">
+              <p>WhatsApp: <a className="text-white" href="https://wa.me/27736701175" target="_blank" rel="noopener noreferrer">+27 73 670 1175</a></p>
               <p>Email: <a className="text-white" href="mailto:contact@zamashange.co.za">contact@zamashange.co.za</a></p>
               <p>Phone: <a className="text-white" href="tel:+27736701175">+27 73 670 1175</a></p>
               <p>Location: Johannesburg, South Africa</p>
+              <p>Response Time: Usually within 24 hours</p>
             </div>
           </FadeIn>
           <FadeIn delay={0.08}>
@@ -566,11 +715,11 @@ export function VixcraInspiredHome() {
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <select className="rounded-full border border-white/10 bg-[#1a1a16] px-5 py-4 text-sm text-white outline-none focus:border-[#d8ff63]">
                   <option>Project type</option>
-                  <option>UI/UX Design</option>
-                  <option>Web Development</option>
-                  <option>App Development</option>
-                  <option>Social Media Strategy</option>
-                  <option>Video Editing</option>
+                  {servicesData.map((service) => (
+                    <option key={service.slug}>{service.title}</option>
+                  ))}
+                  <option>Multiple Services</option>
+                  <option>Other</option>
                 </select>
                 <select className="rounded-full border border-white/10 bg-[#1a1a16] px-5 py-4 text-sm text-white outline-none focus:border-[#d8ff63]">
                   <option>Budget range</option>
